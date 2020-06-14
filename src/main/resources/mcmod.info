@@ -1,0 +1,16 @@
+[
+{
+  "modid": "unnamedmod",
+  "name": "Unnamed Mod",
+  "description": "A mod with a very cool name!",
+  "version": "1.0.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["hammy3502"],
+  "credits": "The Forge and FML guys for all the work they put in to making Forge!",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

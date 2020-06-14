@@ -1,0 +1,18 @@
+//Items
+item.frist_item.name=Frist Item
+
+//Tools
+item.frist_sword.name=Frist Sword (not overpowered)
+item.frist_pickaxe.name=Frist Pickaxe
+item.frist_axe.name=Frist Axe (hope you like cooldowns!)
+item.frist_shovel.name=Frist Shovel
+item.frist_hoe.name=Frist Hoe
+
+//Blocks
+tile.frist_block.name=Frist Block
+
+//Armor
+item.frist_helmet.name=Frist Helmet
+item.frist_chestplate.name=Frist Chestplate
+item.frist_leggings.name=Frist Leggings
+item.frist_boots.name=Frist Boots
