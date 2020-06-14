@@ -2,6 +2,7 @@ package net.blf02.unnamedmod.util.handlers;
 
 import net.blf02.unnamedmod.init.ModBlocks;
 import net.blf02.unnamedmod.init.ModItems;
+import net.blf02.unnamedmod.init.ModToolsArmor;
 import net.blf02.unnamedmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -14,7 +15,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class RegistryHandler {
 	@SubscribeEvent
 	public static void onItemRegister(RegistryEvent.Register<Item> event) {
-		ModItems.init();
+		ModToolsArmor.init();
 		event.getRegistry().registerAll(ModItems.Items.toArray(new Item[0]));
 	}
 	

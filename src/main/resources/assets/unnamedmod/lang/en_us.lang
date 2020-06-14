@@ -16,3 +16,6 @@ item.frist_helmet.name=Frist Helmet
 item.frist_chestplate.name=Frist Chestplate
 item.frist_leggings.name=Frist Leggings
 item.frist_boots.name=Frist Boots
+
+//Creative Tabs
+itemGroup.frist_tab=Frist Tab (Overpowered Test Items)

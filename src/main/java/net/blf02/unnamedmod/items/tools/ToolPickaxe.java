@@ -1,9 +1,9 @@
 package net.blf02.unnamedmod.items.tools;
 
 import net.blf02.unnamedmod.UnnamedMod;
+import net.blf02.unnamedmod.init.ModCreativeTabs;
 import net.blf02.unnamedmod.init.ModItems;
 import net.blf02.unnamedmod.util.IHasModel;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemPickaxe;
 
 public class ToolPickaxe extends ItemPickaxe implements IHasModel {
@@ -11,7 +11,7 @@ public class ToolPickaxe extends ItemPickaxe implements IHasModel {
 		super(material);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.MISC);
+		setCreativeTab(ModCreativeTabs.fristTab);
 		
 		ModItems.Items.add(this);
 	}

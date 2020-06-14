@@ -1,9 +1,9 @@
 package net.blf02.unnamedmod.items.armor;
 
 import net.blf02.unnamedmod.UnnamedMod;
+import net.blf02.unnamedmod.init.ModCreativeTabs;
 import net.blf02.unnamedmod.init.ModItems;
 import net.blf02.unnamedmod.util.IHasModel;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 
@@ -13,7 +13,7 @@ public class ArmorBase extends ItemArmor implements IHasModel {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 		setUnlocalizedName(name);
 		setRegistryName(name);
-		setCreativeTab(CreativeTabs.COMBAT);
+		setCreativeTab(ModCreativeTabs.fristTab);
 		
 		ModItems.Items.add(this);
 	}
