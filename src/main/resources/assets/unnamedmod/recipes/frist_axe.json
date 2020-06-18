@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RR",
+        "RS",
+        " S"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "unnamedmod:frist_item"
+        },
+        "S":
+        {
+            "item": "minecraft:stick"
+        }
+    },
+    
+    "result":
+    {
+        "item": "unnamedmod:frist_axe",
+        "count": 1
+    }
+}

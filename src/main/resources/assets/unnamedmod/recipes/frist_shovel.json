@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "R",
+        "S",
+        "S"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "unnamedmod:frist_item"
+        },
+        "S":
+        {
+            "item": "minecraft:stick"
+        }
+    },
+    
+    "result":
+    {
+        "item": "unnamedmod:frist_shovel",
+        "count": 1
+    }
+}

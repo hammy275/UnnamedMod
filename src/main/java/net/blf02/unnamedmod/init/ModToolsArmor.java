@@ -2,6 +2,7 @@ package net.blf02.unnamedmod.init;
 
 import net.blf02.unnamedmod.UnnamedMod;
 import net.blf02.unnamedmod.items.armor.ArmorBase;
+import net.blf02.unnamedmod.items.tools.FristSword;
 import net.blf02.unnamedmod.items.tools.ToolAxe;
 import net.blf02.unnamedmod.items.tools.ToolHoe;
 import net.blf02.unnamedmod.items.tools.ToolPickaxe;
@@ -23,13 +24,18 @@ public class ModToolsArmor {
 	//Initialize Extra Stuff (called before registering items)
 	public static void init() {
 		System.out.println("UnnamedMod out here adding some tools and armor");
-		addToolItems("frist", fristMaterial, 2000.0F, -3.9F);
+		
+		new FristSword("frist_sword", fristMaterial);
+		
+		addToolItems("frist", fristMaterial, 2000.0F, -3.9F, true);
 		addArmorItems("frist", fristArmorMaterial);
 		
 	}
 		
-	private static void addToolItems(String namePrefix, ToolMaterial material, float axeDamage, float axeSpeedModifier) {
-		ModItems.Items.add(new ToolSword(namePrefix + "_" + "sword", material));
+	private static void addToolItems(String namePrefix, ToolMaterial material, float axeDamage, float axeSpeedModifier, boolean noSword) {
+		if (!noSword) {
+			ModItems.Items.add(new ToolSword(namePrefix + "_" + "sword", material));
+		}
 		ModItems.Items.add(new ToolPickaxe(namePrefix + "_" + "pickaxe", material));
 		ModItems.Items.add(new ToolAxe(namePrefix + "_" + "axe", material, axeDamage, axeSpeedModifier));
 		ModItems.Items.add(new ToolSpade(namePrefix + "_" + "shovel", material));

@@ -1,13 +1,17 @@
 package net.blf02.unnamedmod.util.handlers;
 
+import net.blf02.unnamedmod.entities.CustomFireball;
 import net.blf02.unnamedmod.init.ModBlocks;
 import net.blf02.unnamedmod.init.ModItems;
 import net.blf02.unnamedmod.init.ModToolsArmor;
 import net.blf02.unnamedmod.util.IHasModel;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -36,5 +40,10 @@ public class RegistryHandler {
 				((IHasModel)block).registerModels();
 			}
 		}
+	}
+	
+	@SubscribeEvent
+	public static void registerModels(final ModelRegistryEvent event) {
+		RenderingRegistry.registerEntityRenderingHandler(CustomFireball.class, renderManager -> new RenderSnowball<CustomFireball>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
 	}
 }

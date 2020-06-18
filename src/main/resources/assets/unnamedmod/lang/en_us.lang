@@ -1,21 +1,21 @@
 //Items
-item.frist_item.name=Frist Item
+item.frist_item.name=Debug Essence
 
 //Tools
-item.frist_sword.name=Frist Sword (not overpowered)
-item.frist_pickaxe.name=Frist Pickaxe
-item.frist_axe.name=Frist Axe (hope you like cooldowns!)
-item.frist_shovel.name=Frist Shovel
-item.frist_hoe.name=Frist Hoe
+item.frist_sword.name=Debug Sword
+item.frist_pickaxe.name=Debug Pickaxe
+item.frist_axe.name=Debug Axe
+item.frist_shovel.name=Debug Shovel
+item.frist_hoe.name=Debug Hoe
 
 //Blocks
-tile.frist_block.name=Frist Block
+tile.frist_block.name=Debug Block
 
 //Armor
-item.frist_helmet.name=Frist Helmet
-item.frist_chestplate.name=Frist Chestplate
-item.frist_leggings.name=Frist Leggings
-item.frist_boots.name=Frist Boots
+item.frist_helmet.name=Debug Helmet
+item.frist_chestplate.name=Debug Chestplate
+item.frist_leggings.name=Debug Leggings
+item.frist_boots.name=Debug Boots
 
 //Creative Tabs
-itemGroup.frist_tab=Frist Tab (Overpowered Test Items)
+itemGroup.frist_tab=Debug Items

@@ -1,18 +1,48 @@
 {
-    "type": "minecraft:crafting_shapeless",
- 
-    "ingredients":
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
     [
- 
-    {
-      "item": "unnamedmod:frist_block"
-    }
-   
+        "NDP",
+        "BSE",
+        "ODO"
     ],
- 
+    
+    "key":
+    {
+        "S":
+        {
+            "item": "minecraft:nether_star"
+        },
+        "E":
+        {
+            "item": "minecraft:emerald_block"
+        },
+        "B":
+        {
+            "item": "minecraft:blaze_rod"
+        },
+        "N":
+        {
+            "item": "minecraft:ender_pearl"
+        },
+        "P":
+        {
+            "item": "minecraft:sticky_piston"
+        },
+        "O":
+        {
+            "item": "minecraft:obsidian"
+        },
+        "D":
+        {
+            "item": "minecraft:diamond_block"
+        }
+    },
+    
     "result":
     {
         "item": "unnamedmod:frist_item",
-        "count": 9
+        "count": 1
     }
 }

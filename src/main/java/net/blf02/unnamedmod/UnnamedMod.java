@@ -2,8 +2,10 @@ package net.blf02.unnamedmod;
 
 import org.apache.logging.log4j.Logger;
 
+import net.blf02.unnamedmod.entities.CustomFireball;
 import net.blf02.unnamedmod.init.ModRecipes;
 import net.blf02.unnamedmod.proxy.CommonProxy;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -11,6 +13,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 @Mod(modid = UnnamedMod.MODID, name = UnnamedMod.NAME, version = UnnamedMod.VERSION)
 public class UnnamedMod
@@ -34,6 +37,7 @@ public class UnnamedMod
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         logger.debug("Hello World from Unnamed Mod!");
+        EntityRegistry.registerModEntity(new ResourceLocation(MODID + ":magic_fireball"), CustomFireball.class, "magic_fireball", 784, UnnamedMod.instance, 50, 1, true);
     }
 
     @EventHandler

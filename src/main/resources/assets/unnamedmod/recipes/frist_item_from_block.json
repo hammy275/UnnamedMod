@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "unnamedmod:frist_block"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "unnamedmod:frist_item",
+        "count": 9
+    }
+}

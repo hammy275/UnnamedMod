@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RRR",
+        "R R"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "unnamedmod:frist_item"
+        }
+    },
+    
+    "result":
+    {
+        "item": "unnamedmod:frist_helmet",
+        "count": 1
+    }
+}
