@@ -2,6 +2,7 @@ package net.blf02.unnamedmod.init;
 
 import net.blf02.unnamedmod.UnnamedMod;
 import net.blf02.unnamedmod.items.armor.ArmorBase;
+import net.blf02.unnamedmod.items.tools.FristAxe;
 import net.blf02.unnamedmod.items.tools.FristPickaxe;
 import net.blf02.unnamedmod.items.tools.FristSword;
 import net.blf02.unnamedmod.items.tools.ToolAxe;
@@ -29,8 +30,9 @@ public class ModToolsArmor {
 		
 		new FristSword("frist_sword", fristMaterial);
 		new FristPickaxe("frist_pickaxe", fristMaterial);
+		new FristAxe("frist_axe", fristMaterial, 2000.0F, -3.9F);
 		
-		addToolItems("frist", fristMaterial, 2000.0F, -3.9F, new String[] {"sword", "pickaxe"});
+		addToolItems("frist", fristMaterial, 2000.0F, -3.9F, new String[] {"sword", "pickaxe", "axe"});
 		addArmorItems("frist", fristArmorMaterial);
 		
 	}
