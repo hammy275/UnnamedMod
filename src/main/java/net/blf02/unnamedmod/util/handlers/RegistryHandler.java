@@ -1,6 +1,7 @@
 package net.blf02.unnamedmod.util.handlers;
 
 import net.blf02.unnamedmod.entities.CustomFireball;
+import net.blf02.unnamedmod.entities.MiningBall;
 import net.blf02.unnamedmod.init.ModBlocks;
 import net.blf02.unnamedmod.init.ModItems;
 import net.blf02.unnamedmod.init.ModToolsArmor;
@@ -45,5 +46,6 @@ public class RegistryHandler {
 	@SubscribeEvent
 	public static void registerModels(final ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(CustomFireball.class, renderManager -> new RenderSnowball<CustomFireball>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(MiningBall.class, renderManager -> new RenderSnowball<MiningBall>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
 	}
 }

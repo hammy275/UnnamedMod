@@ -3,6 +3,7 @@ package net.blf02.unnamedmod;
 import org.apache.logging.log4j.Logger;
 
 import net.blf02.unnamedmod.entities.CustomFireball;
+import net.blf02.unnamedmod.entities.MiningBall;
 import net.blf02.unnamedmod.init.ModRecipes;
 import net.blf02.unnamedmod.proxy.CommonProxy;
 import net.minecraft.util.ResourceLocation;
@@ -38,6 +39,7 @@ public class UnnamedMod
         logger = event.getModLog();
         logger.debug("Hello World from Unnamed Mod!");
         EntityRegistry.registerModEntity(new ResourceLocation(MODID + ":magic_fireball"), CustomFireball.class, "magic_fireball", 784, UnnamedMod.instance, 50, 1, true);
+        EntityRegistry.registerModEntity(new ResourceLocation(MODID + ":mining_ball"), MiningBall.class, "mining_ball", 784, UnnamedMod.instance, 51, 1, true);
     }
 
     @EventHandler
