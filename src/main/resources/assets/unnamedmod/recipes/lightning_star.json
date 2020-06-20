@@ -1,0 +1,36 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "DGD",
+        "RSR",
+        "DGD"
+    ],
+    
+    "key":
+    {
+        "S":
+        {
+            "item": "minecraft:nether_star"
+        },
+        "R":
+        {
+            "item": "minecraft:redstone_block"
+        },
+        "D":
+        {
+            "item": "minecraft:diamond_block"
+        },
+        "G":
+        {
+            "item": "minecraft:glowstone"
+        }
+    },
+    
+    "result":
+    {
+        "item": "unnamedmod:lightning_star",
+        "count": 1
+    }
+}

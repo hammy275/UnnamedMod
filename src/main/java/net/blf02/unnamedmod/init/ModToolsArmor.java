@@ -24,10 +24,8 @@ public class ModToolsArmor {
 	public static final ArmorMaterial fristArmorMaterial = EnumHelper.addArmorMaterial("frist_armor_material", UnnamedMod.MODID + ":" + "frist", 99, new int[]{8, 10, 12, 8}, 33, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 10.0F);
 	
 	
-	//Initialize Extra Stuff (called before registering items)
+	//Initialize Extra Tools + Armor (called before registering items)
 	public static void init() {
-		System.out.println("UnnamedMod out here adding some tools and armor");
-		
 		new FristSword("frist_sword", fristMaterial);
 		new FristPickaxe("frist_pickaxe", fristMaterial);
 		new FristAxe("frist_axe", fristMaterial, 2000.0F, -3.9F);
@@ -39,28 +37,28 @@ public class ModToolsArmor {
 		
 	private static void addToolItems(String namePrefix, ToolMaterial material, float axeDamage, float axeSpeedModifier, String[] itemsToSkip) {
 		if (!BasicFunctions.isStringInArray("sword", itemsToSkip)) {
-			ModItems.Items.add(new ToolSword(namePrefix + "_" + "sword", material));
+			new ToolSword(namePrefix + "_" + "sword", material);
 		}
 		if (!BasicFunctions.isStringInArray("pickaxe", itemsToSkip)) {
-			ModItems.Items.add(new ToolPickaxe(namePrefix + "_" + "pickaxe", material));
+			new ToolPickaxe(namePrefix + "_" + "pickaxe", material);
 		}
 		if (!BasicFunctions.isStringInArray("axe", itemsToSkip)) {
-			ModItems.Items.add(new ToolAxe(namePrefix + "_" + "axe", material, axeDamage, axeSpeedModifier));
+			new ToolAxe(namePrefix + "_" + "axe", material, axeDamage, axeSpeedModifier);
 		}
 		if (!BasicFunctions.isStringInArray("shovel", itemsToSkip)) {
-			ModItems.Items.add(new ToolSpade(namePrefix + "_" + "shovel", material));
+			new ToolSpade(namePrefix + "_" + "shovel", material);
 		}
 		if (!BasicFunctions.isStringInArray("hoe", itemsToSkip)) {
-			ModItems.Items.add(new ToolHoe(namePrefix + "_" + "hoe", material));
+			new ToolHoe(namePrefix + "_" + "hoe", material);
 		}
 		
 	}
 	
 	private static void addArmorItems(String namePrefix, ArmorMaterial material) {
-		ModItems.Items.add(new ArmorBase(namePrefix + "_" + "helmet", material, 1, EntityEquipmentSlot.HEAD));
-		ModItems.Items.add(new ArmorBase(namePrefix + "_" + "chestplate", material, 1, EntityEquipmentSlot.CHEST));
-		ModItems.Items.add(new ArmorBase(namePrefix + "_" + "leggings", material, 2, EntityEquipmentSlot.LEGS));
-		ModItems.Items.add(new ArmorBase(namePrefix + "_" + "boots", material, 1, EntityEquipmentSlot.FEET));
+		new ArmorBase(namePrefix + "_" + "helmet", material, 1, EntityEquipmentSlot.HEAD);
+		new ArmorBase(namePrefix + "_" + "chestplate", material, 1, EntityEquipmentSlot.CHEST);
+		new ArmorBase(namePrefix + "_" + "leggings", material, 2, EntityEquipmentSlot.LEGS);
+		new ArmorBase(namePrefix + "_" + "boots", material, 1, EntityEquipmentSlot.FEET);
 	}
 
 }

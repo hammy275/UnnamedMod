@@ -1,21 +1,23 @@
 //Items
-item.frist_item.name=Debug Essence
+item.frist_item.name=Reality-Breaking Essence
+item.lightning_star.name=Lightning Star
+item.enhanced_lightning_star.name=Reality-Breaking Lightning Star
 
 //Tools
-item.frist_sword.name=Debug Sword
-item.frist_pickaxe.name=Debug Pickaxe
-item.frist_axe.name=Debug Axe
-item.frist_shovel.name=Debug Shovel
-item.frist_hoe.name=Debug Hoe
+item.frist_sword.name=Reality-Breaking Sword
+item.frist_pickaxe.name=Reality-Breaking Pickaxe
+item.frist_axe.name=Reality-Breaking Axe
+item.frist_shovel.name=Reality-Breaking Shovel
+item.frist_hoe.name=Reality-Breaking Hoe
 
 //Blocks
-tile.frist_block.name=Debug Block
+tile.frist_block.name=Block of Reality-Breaking Essence
 
 //Armor
-item.frist_helmet.name=Debug Helmet
-item.frist_chestplate.name=Debug Chestplate
-item.frist_leggings.name=Debug Leggings
-item.frist_boots.name=Debug Boots
+item.frist_helmet.name=Reality-Breaking Helmet
+item.frist_chestplate.name=Reality-Breaking Chestplate
+item.frist_leggings.name=Reality-Breaking Leggings
+item.frist_boots.name=Reality-Breaking Boots
 
 //Creative Tabs
-itemGroup.frist_tab=Debug Items
+itemGroup.frist_tab=Reality-Breaking Items

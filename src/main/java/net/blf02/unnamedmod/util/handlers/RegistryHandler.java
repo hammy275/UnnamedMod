@@ -15,6 +15,8 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @EventBusSubscriber
 public class RegistryHandler {
@@ -44,6 +46,7 @@ public class RegistryHandler {
 	}
 	
 	@SubscribeEvent
+	@SideOnly(Side.CLIENT)
 	public static void registerModels(final ModelRegistryEvent event) {
 		RenderingRegistry.registerEntityRenderingHandler(CustomFireball.class, renderManager -> new RenderSnowball<CustomFireball>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(MiningBall.class, renderManager -> new RenderSnowball<MiningBall>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));

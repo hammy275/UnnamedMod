@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "unnamedmod:lightning_star"
+    },
+    
+    {
+      "item": "unnamedmod:frist_item"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "unnamedmod:enhanced_lightning_star",
+        "count": 1
+    }
+}

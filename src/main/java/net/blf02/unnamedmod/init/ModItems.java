@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.blf02.unnamedmod.items.ItemBase;
+import net.blf02.unnamedmod.items.LightningStar;
+import net.blf02.unnamedmod.items.tools.EnhancedLightningStar;
 import net.minecraft.item.Item;
 
 public class ModItems {
@@ -12,6 +14,8 @@ public class ModItems {
 	
 	//Regular Items
 	public static final Item fristItem = new ItemBase("frist_item");
+	public static final Item lightningStar = new LightningStar("lightning_star");
+	public static final Item enhancedLightningStar = new EnhancedLightningStar("enhanced_lightning_star");
 	
 	//Tools
 	//public static final ItemSword fristSword = new ToolSword("frist_sword", fristMaterial);
