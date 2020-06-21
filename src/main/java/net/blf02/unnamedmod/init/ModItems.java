@@ -3,9 +3,9 @@ package net.blf02.unnamedmod.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.blf02.unnamedmod.items.EnhancedLightningStar;
 import net.blf02.unnamedmod.items.ItemBase;
 import net.blf02.unnamedmod.items.LightningStar;
-import net.blf02.unnamedmod.items.tools.EnhancedLightningStar;
 import net.minecraft.item.Item;
 
 public class ModItems {

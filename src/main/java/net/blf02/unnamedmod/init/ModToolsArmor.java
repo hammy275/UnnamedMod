@@ -15,6 +15,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
 
 public class ModToolsArmor {
@@ -26,6 +27,9 @@ public class ModToolsArmor {
 	
 	//Initialize Extra Tools + Armor (called before registering items)
 	public static void init() {
+		fristMaterial.setRepairItem(new ItemStack(ModItems.fristItem));
+		fristArmorMaterial.setRepairItem(new ItemStack(ModItems.fristItem));
+		
 		new FristSword("frist_sword", fristMaterial);
 		new FristPickaxe("frist_pickaxe", fristMaterial);
 		new FristAxe("frist_axe", fristMaterial, 2000.0F, -3.9F);

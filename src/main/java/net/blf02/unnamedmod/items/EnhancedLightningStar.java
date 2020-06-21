@@ -1,6 +1,5 @@
-package net.blf02.unnamedmod.items.tools;
+package net.blf02.unnamedmod.items;
 
-import net.blf02.unnamedmod.items.LightningStar;
 import net.blf02.unnamedmod.util.ClonedVanillaFunctions;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
