@@ -30,6 +30,10 @@ public class FissureItem extends ItemBase {
 	private static EntityPlayer player;
 	private static Vec3d lookVec;
 	private static RayTraceResult result;
+	private static double oldBlockX;
+	private static double oldBlockZ;
+	private static Block[] illegalBlocks = {Blocks.WATER, Blocks.FLOWING_WATER, Blocks.LAVA, Blocks.FLOWING_LAVA, Blocks.FIRE};
+	private static Block[] breakThroughBlocks = {Blocks.YELLOW_FLOWER, Blocks.RED_FLOWER, Blocks.TORCH, Blocks.REDSTONE_TORCH, Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, Blocks.TALLGRASS, Blocks.DEADBUSH, Blocks.REDSTONE_WIRE, Blocks.SAPLING, Blocks.SNOW_LAYER};
 	
 	public FissureItem(String name) {
 		super(name);
@@ -52,54 +56,103 @@ public class FissureItem extends ItemBase {
 		boolean xDirIsPositive, zDirIsPositive;
 		xDirIsPositive = result.getBlockPos().getX() > playerX;
 		zDirIsPositive = result.getBlockPos().getZ() > playerZ;
-		if (!world.isAirBlock(new BlockPos(playerX, playerY - 1, playerZ))) {
-			int xSteps = Math.abs((int) (lookVec.x * 10));
-			int zSteps = Math.abs((int) (lookVec.z * 10));
-			double blockX, blockZ;
-			int currentStep = fissureTime + 1;
-			double xMod = (double) (xSteps) / 10 * currentStep;
-			double zMod = (double) (zSteps) / 10 * currentStep;
-			if (xDirIsPositive) {
-				blockX = playerX + xMod;
-			} else {
-				blockX = playerX - xMod;
-			}
-			if (zDirIsPositive) {
-				blockZ = playerZ + zMod;
-			} else {
-				blockZ = playerZ - zMod;
-			}
-			if (world.isAirBlock(new BlockPos(blockX, playerY-1, blockZ))) {
-				fissureTime = -99;
-			}
-			fissureEffect(world, new BlockPos(blockX, playerY, blockZ));
+		
+		int xSteps = Math.abs((int) (lookVec.x * 10));
+		int zSteps = Math.abs((int) (lookVec.z * 10));
+		double blockX, blockZ;
+		int currentStep = fissureTime + 1;
+		double xMod = (double) (xSteps) / 10 * currentStep;
+		double zMod = (double) (zSteps) / 10 * currentStep;
+		if (xDirIsPositive) {
+			blockX = playerX + xMod;
 		} else {
-			fissureTime = -99;
+			blockX = playerX - xMod;
 		}
+		if (zDirIsPositive) {
+			blockZ = playerZ + zMod;
+		} else {
+			blockZ = playerZ - zMod;
+		}
+		if (fissureTime > 0 && blockX == oldBlockX && blockZ == oldBlockZ) { //Guarantees never being on the same block twice
+			if (xSteps > zSteps) {
+				if (xDirIsPositive) {
+					blockX++;
+				} else {
+					blockX--;
+				}
+			} else {
+				if (zDirIsPositive) {
+					blockZ++;
+				} else {
+					blockZ--;
+				}
+			}
+		}
+		if (BasicFunctions.blockInArray(world.getBlockState(new BlockPos(blockX, playerY, blockZ)).getBlock(), illegalBlocks)) {
+			fissureTime = -99;
+			return;
+		}
+		if (world.isAirBlock(new BlockPos(blockX, playerY-1, blockZ)) && world.isAirBlock(new BlockPos(blockX, playerY-2, blockZ))) {
+			fissureTime = -99;
+			return;
+		}
+		if (world.isAirBlock(new BlockPos(blockX, playerY-1, blockZ))) {
+			playerY--;
+		}
+		if (!world.isAirBlock(new BlockPos(blockX, playerY, blockZ)) && !BasicFunctions.blockInArray(world.getBlockState(new BlockPos(blockX, playerY, blockZ)).getBlock(), breakThroughBlocks)) {
+			playerY++;
+		}
+		fissureEffect(world, new BlockPos(blockX, playerY, blockZ), -1);
 	}
 	
-	private static void fissureEffect(World world, BlockPos pos) {
+	private static void fissureEffect(World world, BlockPos pos, int getYMod) {
 		Block block;
-		Block[] legalCloneBlocks = {Blocks.STONE, Blocks.DIRT, Blocks.COBBLESTONE, Blocks.LEAVES, Blocks.LEAVES2, Blocks.GRAVEL, Blocks.SAND, Blocks.SANDSTONE};
-		Block[] legalBreakBlocks = {Blocks.YELLOW_FLOWER, Blocks.RED_FLOWER, Blocks.TORCH, Blocks.REDSTONE_TORCH, Blocks.BROWN_MUSHROOM, Blocks.RED_MUSHROOM, Blocks.TALLGRASS, Blocks.DEADBUSH, Blocks.REDSTONE_WIRE, Blocks.SAPLING};
-		Block blockCheckBelow = world.getBlockState(new BlockPos(pos.getX(), pos.getY()-1, pos.getZ())).getBlock();
-		Block blockCheck = world.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ())).getBlock();
-		if (BasicFunctions.blockInArray(blockCheck, legalBreakBlocks)) {
-			world.destroyBlock(new BlockPos(pos.getX(), pos.getY(), pos.getZ()), true);
-		}
-		else {
-			if (!BasicFunctions.blockInArray(blockCheck, legalCloneBlocks) && !world.isAirBlock(new BlockPos(pos.getX(), pos.getY(), pos.getZ()))) {
-				return;
+		int getXMod, getZMod;
+		if (pos.getZ() % 2 == 0) {
+			getZMod = 2;
+			if (pos.getX() % 2 == 0) {
+				getXMod = 2;
+			} else {
+				getXMod = -2;
+			}
+		} else {
+			getZMod = -2;
+			if (pos.getX() % 2 == 0) {
+				getXMod = -2;
+			} else {
+				getXMod = 2;
 			}
 		}
-		if (BasicFunctions.blockInArray(blockCheckBelow, legalCloneBlocks)) {
-			block = blockCheckBelow;
+		block = Blocks.AIR;
+		for (int i = 0; i <= 3; i++) {
+			block = world.getBlockState(new BlockPos(pos.getX() + getXMod, pos.getY() + getYMod, pos.getZ() + getZMod)).getBlock();
+			if (block == Blocks.AIR || BasicFunctions.blockInArray(block, breakThroughBlocks) || BasicFunctions.blockInArray(block, illegalBlocks)) {
+				switch (i) {
+				case 0:
+					getZMod = getZMod * -1;
+					break;
+				case 1:
+					getXMod = getXMod * -1;
+					break;
+				case 2:
+					getZMod = getZMod * -1;
+					break;
+				case 3:
+					if (getYMod == -1) {
+						fissureEffect(world, pos, -2);
+					} else {
+						fissureTime = -99;
+						break;
+					}
+				}
+			} else {
+				break;
+			}
 		}
-		else if (pos.getY() > 60) {
-			block = Blocks.DIRT;
-		} else {
-			block = Blocks.STONE;
+		if (fissureTime < 0) {
+			return;
 		}
+		world.destroyBlock(new BlockPos(pos.getX() + getXMod, pos.getY() + getYMod, pos.getZ() + getZMod), false);
 		world.setBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ()), block.getDefaultState());
 		AxisAlignedBB radiusOfEffect = new AxisAlignedBB(pos.getX() - 2, pos.getY() - 1, pos.getZ() - 2, pos.getX() + 2, pos.getY() + 2, pos.getZ() + 2);
 		List<Entity> affectedEntities = world.getEntitiesWithinAABB(Entity.class, radiusOfEffect);
