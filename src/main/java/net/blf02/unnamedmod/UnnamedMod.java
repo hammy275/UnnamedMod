@@ -3,6 +3,8 @@ package net.blf02.unnamedmod;
 import net.blf02.unnamedmod.init.ModEntities;
 import net.blf02.unnamedmod.init.ModRecipes;
 import net.blf02.unnamedmod.proxy.CommonProxy;
+import net.blf02.unnamedmod.util.TickHandlers;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -31,6 +33,7 @@ public class UnnamedMod
     public void preInit(FMLPreInitializationEvent event) {
         System.out.println("Hello World from Unnamed Mod!");
         ModEntities.init();
+        MinecraftForge.EVENT_BUS.register(new TickHandlers());
     }
 
     @EventHandler

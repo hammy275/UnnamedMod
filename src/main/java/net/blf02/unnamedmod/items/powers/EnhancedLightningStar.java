@@ -1,4 +1,4 @@
-package net.blf02.unnamedmod.items;
+package net.blf02.unnamedmod.items.powers;
 
 import net.blf02.unnamedmod.util.ClonedVanillaFunctions;
 import net.minecraft.entity.player.EntityPlayer;

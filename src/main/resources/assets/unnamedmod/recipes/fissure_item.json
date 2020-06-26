@@ -5,7 +5,8 @@
     [
  
     {
-      "item": "unnamedmod:lightning_star"
+      "item": "minecraft:dirt",
+      "data": 0
     },
     
     {
@@ -16,7 +17,7 @@
  
     "result":
     {
-        "item": "unnamedmod:enhanced_lightning_star",
+        "item": "unnamedmod:fissure_item",
         "count": 1
     }
 }
