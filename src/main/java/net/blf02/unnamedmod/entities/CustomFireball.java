@@ -1,17 +1,12 @@
 package net.blf02.unnamedmod.entities;
 
-import java.util.Random;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityLargeFireball;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 public class CustomFireball extends EntityLargeFireball {
-	
-	EnumParticleTypes[] particles = new EnumParticleTypes[] {EnumParticleTypes.ENCHANTMENT_TABLE, EnumParticleTypes.CRIT_MAGIC};
 	
 	public CustomFireball(World worldIn, EntityLivingBase shooter, double accelX, double accelY, double accelZ) {
 		super(worldIn, shooter, accelX, accelY, accelZ);
@@ -34,14 +29,8 @@ public class CustomFireball extends EntityLargeFireball {
 	
 	@Override
 	protected boolean isFireballFiery() {
-		return false;
+		return true;
 	}
-	
-	@Override
-	protected EnumParticleTypes getParticleType()
-    {
-        return particles[new Random().nextInt(particles.length)];
-    }
 	
 	@Override
 	public boolean attackEntityFrom(DamageSource source, float amount) {

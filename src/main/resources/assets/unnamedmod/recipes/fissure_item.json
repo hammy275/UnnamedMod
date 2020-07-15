@@ -10,7 +10,19 @@
     },
     
     {
-      "item": "unnamedmod:frist_item"
+      "item": "minecraft:tnt"
+    },
+    
+    {
+      "item": "minecraft:cobblestone"
+    },
+    
+    {
+      "item": "minecraft:obsidian"
+    },
+    
+    {
+      "item": "minecraft:diamond"
     }
    
     ],

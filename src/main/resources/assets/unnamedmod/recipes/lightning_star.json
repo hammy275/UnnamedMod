@@ -3,16 +3,16 @@
     
     "pattern":
     [
-        "DGD",
-        "RSR",
-        "DGD"
+        "RGR",
+        "DLD",
+        "RGR"
     ],
     
     "key":
     {
-        "S":
+        "L":
         {
-            "item": "minecraft:nether_star"
+            "item": "minecraft:redstone_lamp"
         },
         "R":
         {
@@ -20,7 +20,7 @@
         },
         "D":
         {
-            "item": "minecraft:diamond_block"
+            "item": "minecraft:diamond"
         },
         "G":
         {

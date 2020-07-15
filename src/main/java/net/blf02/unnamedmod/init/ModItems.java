@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.blf02.unnamedmod.items.ItemBase;
 import net.blf02.unnamedmod.items.powers.EnhancedLightningStar;
+import net.blf02.unnamedmod.items.powers.FireballItem;
 import net.blf02.unnamedmod.items.powers.FissureItem;
 import net.blf02.unnamedmod.items.powers.LightningStar;
 import net.minecraft.item.Item;
@@ -20,6 +21,7 @@ public class ModItems {
 	public static final Item lightningStar = new LightningStar("lightning_star");
 	public static final Item enhancedLightningStar = new EnhancedLightningStar("enhanced_lightning_star");
 	public static final Item fissureItem = new FissureItem("fissure_item");
+	public static final Item fireballItem = new FireballItem("fireball_item");
 	
 	//Tools
 	//public static final ItemSword fristSword = new ToolSword("frist_sword", fristMaterial);

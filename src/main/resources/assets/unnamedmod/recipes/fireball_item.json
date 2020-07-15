@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shapeless",
+ 
+    "ingredients":
+    [
+ 
+    {
+      "item": "minecraft:diamond"
+    },
+    
+    {
+      "item": "minecraft:glowstone"
+    },
+    
+    {
+      "item": "minecraft:fire_charge"
+    }
+   
+    ],
+ 
+    "result":
+    {
+        "item": "unnamedmod:fireball_item",
+        "count": 1
+    }
+}

@@ -9,6 +9,7 @@ import net.blf02.unnamedmod.util.IHasModel;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderSnowball;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -48,7 +49,7 @@ public class RegistryHandler {
 	@SubscribeEvent
 	@SideOnly(Side.CLIENT)
 	public static void registerModels(final ModelRegistryEvent event) {
-		RenderingRegistry.registerEntityRenderingHandler(CustomFireball.class, renderManager -> new RenderSnowball<CustomFireball>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
+		RenderingRegistry.registerEntityRenderingHandler(CustomFireball.class, renderManager -> new RenderSnowball<CustomFireball>(renderManager, Items.FIRE_CHARGE, Minecraft.getMinecraft().getRenderItem()));
 		RenderingRegistry.registerEntityRenderingHandler(MiningBall.class, renderManager -> new RenderSnowball<MiningBall>(renderManager, ModItems.fristItem, Minecraft.getMinecraft().getRenderItem()));
 	}
 }
