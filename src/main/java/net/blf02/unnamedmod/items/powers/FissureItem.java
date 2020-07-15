@@ -6,6 +6,7 @@ import net.blf02.unnamedmod.items.ItemBase;
 import net.blf02.unnamedmod.util.BasicFunctions;
 import net.blf02.unnamedmod.util.ClonedVanillaFunctions;
 import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -152,13 +153,15 @@ public class FissureItem extends ItemBase {
 		if (fissureTime < 0) {
 			return;
 		}
-		world.destroyBlock(new BlockPos(pos.getX() + getXMod, pos.getY() + getYMod, pos.getZ() + getZMod), false);
-		world.setBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ()), block.getDefaultState());
+		BlockPos toDel = new BlockPos(pos.getX() + getXMod, pos.getY() + getYMod, pos.getZ() + getZMod);
+		IBlockState blockState = world.getBlockState(toDel);
+		world.destroyBlock(toDel, false);
+		world.setBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ()), blockState);
 		AxisAlignedBB radiusOfEffect = new AxisAlignedBB(pos.getX() - 2, pos.getY() - 1, pos.getZ() - 2, pos.getX() + 2, pos.getY() + 2, pos.getZ() + 2);
 		List<Entity> affectedEntities = world.getEntitiesWithinAABB(Entity.class, radiusOfEffect);
 		for (Entity e: affectedEntities) {
 			if (e != (player)) {
-				e.attackEntityFrom(DamageSource.causePlayerDamage(player), 999.0F);
+				e.attackEntityFrom(DamageSource.causePlayerDamage(player), 12.0F);
 			}
 		}
 	}

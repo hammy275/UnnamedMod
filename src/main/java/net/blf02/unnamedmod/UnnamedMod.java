@@ -21,8 +21,8 @@ public class UnnamedMod
 	public static UnnamedMod instance;
 	
     public static final String MODID = "unnamedmod";
-    public static final String NAME = "Unnamed Mod";
-    public static final String VERSION = "1.0.0";
+    public static final String NAME = "Elements";
+    public static final String VERSION = "0.1.0";
     public static final String CLIENT_PROXY_CLASS = "net.blf02.unnamedmod.proxy.ClientProxy";
     public static final String COMMON_PROXY_CLASS = "net.blf02.unnamedmod.proxy.CommonProxy";
 
@@ -31,19 +31,19 @@ public class UnnamedMod
     
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        System.out.println("Hello World from Unnamed Mod!");
+        System.out.println("Performing Elements pre-init!");
         ModEntities.init();
         MinecraftForge.EVENT_BUS.register(new TickHandlers());
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-    	System.out.println("Hello everybody! It's Unnamed Mod again; how's it going?");
+    	System.out.println("Performing Elements init!");
     	ModRecipes.init();
     }
     
     @EventHandler
     public void init(FMLPostInitializationEvent event) {
-    	System.out.println("One last hello from Unnamed Mod, just about set up here!");
+    	System.out.println("Elements post-init, away we go!");
     }
 }
